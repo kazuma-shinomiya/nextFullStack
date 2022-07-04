@@ -1,5 +1,6 @@
 import connectDB from "../../../../utils/database"
 import { ItemModel } from "../../../../utils/schemaModels"
+import auth from '../../user/auth.js'
 
 const deleteItem = async(req, res) => {
   try {
@@ -13,4 +14,4 @@ const deleteItem = async(req, res) => {
   }
 }
 
-export default deleteItem
+export default auth(deleteItem)

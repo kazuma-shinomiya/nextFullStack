@@ -1,6 +1,7 @@
 import React from 'react'
 import connectDB from '../../../utils/database'
 import { ItemModel } from '../../../utils/schemaModels'
+import auth from '../user/auth'
 
 const create = async(req, res) => {
   try {
@@ -12,4 +13,4 @@ const create = async(req, res) => {
     return res.status(400).json({message: "item not create"})
   }
 }
-export default create
+export default auth(create)

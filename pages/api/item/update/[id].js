@@ -1,5 +1,6 @@
 import connectDB from "../../../../utils/database"
 import { ItemModel } from "../../../../utils/schemaModels"
+import auth from '../../user/auth'
 
 const updateItem = async(req, res) => {
   try {
@@ -13,4 +14,4 @@ const updateItem = async(req, res) => {
   }
 }
 
-export default updateItem
+export default auth(updateItem)
