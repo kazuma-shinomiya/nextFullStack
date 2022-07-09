@@ -4,7 +4,11 @@ import auth from '../../user/auth'
 
 const updateItem = async(req, res) => {
   try {
+    console.log(req)
     await connectDB()
+    const singleItem = await ItemModel.findById(req.query.id)
+    if (singleItem.email !== req.body.email) throw new Error();
+    
     await ItemModel.findByIdAndUpdate(req.query.id, req.body)
     return res.status(200).send({message: "update complete"})
     

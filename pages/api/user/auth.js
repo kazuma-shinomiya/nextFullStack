@@ -15,7 +15,8 @@ const auth = (handler) => {
       return res.status(400).json({message: "token not found"}) 
     }
     try {
-      jwt.verify(token, SECRET_KEY)
+      const decoded = jwt.verify(token, SECRET_KEY)
+      req.body.email = decoded.email
       return handler(req, res)
     } catch (error) {
       return res.status(400).json({message: "token is not collect"})  
