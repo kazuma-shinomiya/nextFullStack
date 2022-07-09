@@ -9,7 +9,7 @@ const auth = (handler) => {
       return handler(req, res)
     }
 
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEiLCJpYXQiOjE2NTY5MzU4MDcsImV4cCI6MTY1NzAxODYwN30.t7P5RPfZ1BcvnrDbBJVUGd7TEGN0w9M3vU_-ijWUmUg"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEiLCJpYXQiOjE2NTczNDU3MzQsImV4cCI6MTY1NzQyODUzNH0.A3IvvnCdhe1KCgKyq8hRzA1xdXBkaraCJSEzXs3yj3o"
     // const token = await req.headers.authorization.split(" ")[1]
     if (!token) {
       return res.status(400).json({message: "token not found"}) 
