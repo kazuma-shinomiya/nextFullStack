@@ -29,6 +29,7 @@ const Login = () => {
         }),
       })
       const jsonData = await response.json()
+      localStorage.setItem("token", jsonData.token)
       alert(jsonData.message)
     } catch (error) {
       alert("ログイン失敗")
