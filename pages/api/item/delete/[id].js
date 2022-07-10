@@ -1,13 +1,13 @@
 import connectDB from "../../../../utils/database"
 import { ItemModel } from "../../../../utils/schemaModels"
-import auth from '../../user/auth.js'
+import auth from '../../../../utils/auth.js'
 
 const deleteItem = async(req, res) => {
   try {
     await connectDB()
     const singleItem = await ItemModel.findById(req.query.id)
     if (singleItem.email !== req.body.email) throw new Error();
-    
+
     await ItemModel.findByIdAndDelete(req.query.id)
     return res.status(200).send({message: "delete complete"})
     

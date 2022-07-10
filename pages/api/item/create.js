@@ -1,7 +1,7 @@
 import React from 'react'
 import connectDB from '../../../utils/database'
 import { ItemModel } from '../../../utils/schemaModels'
-import auth from '../user/auth'
+import auth from '../../../utils/auth'
 
 const create = async(req, res) => {
   try {
